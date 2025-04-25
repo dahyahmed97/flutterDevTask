@@ -43,12 +43,16 @@ The project uses **Clean Architecture** and is structured as follows:
 lib/
 ├── core/                        # Utilities, error handling, base classes
 ├── features/
-│   └── attendance/
+│   └── clockIn/
 │       ├── data/                # Mock data sources, models, repositories
-│       ├── domain/              # Entities, use cases, abstract repos
-│       ├── presentation/        # Cubits, UI screens
-│       └── attendance_injection.dart
-├── app.dart                     # App router and theme
+│       ├── domain/              #  use cases, abstract repos
+│       ├── presentation/
+ └── home/
+│       ├── data/                # Mock data sources, models, repositories
+│       ├── domain/              #  use cases, abstract repos
+│       ├── presentation/            # Cubits, UI screens
+│       
+                   
 └── main.dart                    # Entry point with DI setup
 ```
 
@@ -58,28 +62,13 @@ lib/
 
 State management is handled using **Cubit** (from flutter_bloc). It manages the flow of data between the UI and the underlying logic.
 
-### 📦 Cubit States
 
-- `AttendanceInitial`
-- `AttendanceLoading`
-- `AttendanceLoaded`
-- `ClockingIn`
-- `ClockedIn`
 
 Each Cubit simulates API calls using `Future.delayed` and returns mock responses.
 
 ---
 
-## 🧪 Mock API Integration
 
-Mocked data lives in:
-```
-lib/features/attendance/data/models/mock_data.dart
-```
-
-APIs are simulated using hardcoded lists and artificial delays. To use real APIs, replace this with network service calls.
-
----
 
 ## 📦 Dependencies Used
 
@@ -89,6 +78,13 @@ APIs are simulated using hardcoded lists and artificial delays. To use real APIs
 | get_it          | Dependency Injection (service locator) |
 | equatable       | Simplifies state comparison            |
 | flutter_screenutil | Optional: For responsive UI layouts |
+| dio             | for network calls                      |
+| dartZ           | for reactive programming               |
+| google fonts    | for handling fonts                     |
+| connectivity plus | for checking internet connection     |
+| dartZ           | for reactive programming               |
+
+there's is some other packages used as this code base is built over a skeleton i built
 
 ---
 
