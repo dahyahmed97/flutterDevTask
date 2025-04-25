@@ -26,9 +26,13 @@ class GradientButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(30),
         ),
         child: Center(
-          child: const Text(
+          child: Text(
             'Clock In',
-            style: TextStyle(color: Colors.white, fontSize: 18),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+              fontSize: 16.sp,
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
       ),
